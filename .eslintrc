@@ -1,0 +1,125 @@
+{
+  "$schema": "https://github.com/SchemaStore/schemastore/raw/master/src/schemas/json/eslintrc.json",
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "airbnb-base",
+        "plugin:import/recommended",
+        "plugin:jasmine/recommended",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "plugins": ["jasmine"],
+      "env": {
+        "jasmine": true
+      },
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true
+          }
+        ],
+        "@typescript-eslint/dot-notation": [
+          "error",
+          {
+            "allowIndexSignaturePropertyAccess": true
+          }
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": "error",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_+(_*?)$",
+            "varsIgnorePattern": "^_+(_*?)$",
+            "caughtErrorsIgnorePattern": "^_+(_*?)$",
+            "ignoreRestSiblings": true
+          }
+        ],
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/no-var-requires": "error",
+        "@typescript-eslint/member-ordering": "error",
+        "arrow-parens": ["error", "as-needed"],
+        "class-methods-use-this": "off",
+        "curly": ["error", "all"],
+        "dot-notation": "off",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "ts": "never"
+          }
+        ],
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": [
+              "src/environments/*.ts",
+              "src/test.ts",
+              "**/*.spec.ts",
+              "**/*.po.ts"
+            ]
+          }
+        ],
+        "import/prefer-default-export": "off",
+        "jasmine/no-disabled-tests": 2,
+        "jasmine/no-spec-dupes": [2, "branch"],
+        "jasmine/no-suite-dupes": [2, "branch"],
+        "no-console": ["error", { "allow": ["error"] }],
+        "no-shadow": "off",
+        "no-use-before-define":  ["error", { "classes": false }],
+        "no-useless-constructor": "off",
+        "max-classes-per-file": "off",
+        "padding-line-between-statements": [
+          "error",
+          {
+            "blankLine": "always",
+            "next": "return",
+            "prev": "*"
+          },
+          {
+            "blankLine": "always",
+            "next": "*",
+            "prev": ["const", "let", "var"]
+          },
+          {
+            "blankLine": "any",
+            "next": ["const", "let", "var"],
+            "prev": ["const", "let", "var"]
+          }
+        ]
+      },
+      "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".ts"]
+          },
+          "typescript": {
+            "alwaysTryTypes": true
+          }
+        }
+      }
+    },
+    {
+      "files": ["*.html"],
+      "parser": "@angular-eslint/template-parser",
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "eslint.rules.customizations": [
+    {
+        "rule": "*",
+        "severity": "downgrade"
+    }
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}
