@@ -1,5 +1,7 @@
 # Angular project with ESLint, Prettier and stylelint
 
+JavaScript linters are tools that you can use to help you improve your code.
+They scan your scripts for common issues and errors, and give you back a report.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13 and [Node.js](https://nodejs.org/en/about/releases) version 14.
 
 ## Project Structure
@@ -77,7 +79,7 @@ These functionalities are provided natively or based on plugins.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/app/` directory.
 
 ## Further help
 

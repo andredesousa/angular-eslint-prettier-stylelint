@@ -3,53 +3,62 @@
 
 module.exports = function (config) {
   config.set({
-    basePath: "",
-    frameworks: ["jasmine", "@angular-devkit/build-angular"],
+    basePath: '',
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
-      require("karma-jasmine"),
-      require("karma-chrome-launcher"),
-      require("karma-jasmine-html-reporter"),
-      require("karma-coverage"),
-      require("@angular-devkit/build-angular/plugins/karma"),
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage'),
+      require('@angular-devkit/build-angular/plugins/karma'),
     ],
     client: {
-      jasmine: {
-        // you can add configuration options for Jasmine here
-        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
-        // for example, you can disable the random execution with `random: false`
-        // or set a specific seed with `seed: 4321`
-      },
-      clearContext: false, // leave Jasmine Spec Runner output visible in browser
+      jasmine: {},
+      clearContext: false,
     },
     jasmineHtmlReporter: {
-      suppressAll: true, // removes the duplicated traces
+      suppressAll: true,
     },
     coverageReporter: {
-      dir: require("path").join(__dirname, "./coverage/angular-app"),
-      subdir: ".",
-      reporters: [{ type: "html" }, { type: "text-summary" }],
+      reporters: [
+        { type: 'lcovonly', subdir: '.' },
+        { type: 'html', subdir: '.' },
+        { type: 'text-summary', subdir: '.' },
+      ],
+      dir: require('path').join(__dirname, 'dist/coverage/'),
+      check: config.buildWebpack.options.watch
+        ? {}
+        : {
+            emitWarning: false,
+            global: {
+              statements: 80,
+              lines: 80,
+              branches: 80,
+              functions: 80,
+            },
+          },
     },
-    reporters: ["progress", "kjhtml"],
+    reporters: ['progress', 'coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     customLaunchers: {
       ChromeHeadless: {
-        base: "Chrome",
+        base: 'Chrome',
         flags: [
-          "--headless",
-          "--disable-gpu",
-          "--no-sandbox",
-          "--remote-debugging-port=9222",
+          '--headless',
+          '--disable-gpu',
+          '--no-sandbox',
+          '--remote-debugging-port=9222',
         ],
       },
       ChromeDebugging: {
-        base: "Chrome",
-        flags: ["--remote-debugging-port=9333"],
+        base: 'Chrome',
+        flags: ['--remote-debugging-port=9333'],
       },
     },
-    browsers: ["ChromeHeadless"],
+    browsers: ['ChromeHeadless'],
     singleRun: true,
     restartOnFileChange: true,
   });
