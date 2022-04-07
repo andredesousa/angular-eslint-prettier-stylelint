@@ -5,9 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "test": "ng test --no-progress --code-coverage",
-    "test:watch": "ng test --no-progress --code-coverage --watch",
-    "test:debug": "ng test --no-progress --code-coverage --watch --browsers=ChromeDebugging",
+    "check": "npm run lint && npm run test",
+    "test": "ng test --code-coverage",
+    "test:watch": "ng test --code-coverage --watch",
+    "test:debug": "ng test --code-coverage --watch --browsers=ChromeDebugging",
     "lint": "npm-run-all -s -c lint:scss prettier lint:ts",
     "lint:fix": "npm-run-all -s -c lint:scss:fix prettier:fix lint:ts:fix",
     "lint:ts": "ng lint",

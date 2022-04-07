@@ -4,50 +4,51 @@ JavaScript linters are tools that you can use to help you improve your code.
 They scan your scripts for common issues and errors, and give you back a report.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13 and [Node.js](https://nodejs.org/en/about/releases) version 14.
 
-## Project Structure
+## Overview
 
-When working in a large team with many developers that are responsible for the same codebase, having a common understanding of how the application should be structured is vital.
-This project is based on best practices from the community, [Angular coding style guide](https://angular.io/guide/styleguide), other github Angular projects, and developer experience.
-
-All of the app's code goes in a folder named `src`. The end-to-end tests are in the `e2e` folder.
-In Angular, everything is organized in modules, and every application have at least one of them, the `app` root module.
-The `app` module is the entry point of the application, and is the module that Angular uses to bootstrap the application.
-The global styles for the project are placed in a `scss` folder under `assets`.
-The `styles.scss` file imports all the partials to apply their styling.
-
-## Available npm scripts
-
-The scripts in [package.json](package.json) file were built with simplicity in mind to automate as much repetitive tasks as possible and help developers focus on what really matters.
-All the commands should be executed in a console inside the root directory.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to <http://localhost:4200/>.
-The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component.
-You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Linting and formatting code
-
-[ESLint](https://eslint.org/), [Prettier](https://prettier.io/) and [stylelint](https://stylelint.io/) help maintain the code quality.
 Linters are also excellent tools for finding certain classes of bugs, such as those related to variable scope.
-The formatting of the code is ensured by Prettier.
 
 It's recommended to use them in your projects because:
 
 - They keep everybody on the same page, following the same rules.
 - They save time in code reviews, because you can safely ignore all style issues, and focus on things that matter, like the structure and semantics of your code.
-- They catch errors. Prettier, not so much, but TSLint catches a lot of syntax errors and simple forms of type errors, such as undefined variables.
+- They catch errors. Prettier, not so much, but ESLint catches a lot of syntax errors and simple forms of type errors, such as undefined variables.
 - Setting these things up is a one-time cost, but the time-saving benefits compound over time.
 
-Run `npm run lint` to analyze your code. It includes, `ESLint`, `Prettier`, `stylelint` and other tools.
+This project is based on best practices from the community, [Angular coding style guide](https://angular.io/guide/styleguide), other github Angular projects, and developer experience.
+All of the app's code goes in a folder named `src`. The end-to-end tests are in the `e2e` folder.
+
+## Available npm scripts
+
+The scripts in [package.json](package.json) file were built with simplicity in mind to automate as much repetitive tasks as possible and help developers focus on what really matters.
+
+The next scripts should be executed in a console inside the root directory:
+
+- `start` - Runs the application.
+- `check` - Runs all checks.
+- `lint` - Runs several static code analysis.
+- `lint:fix` - Applies lint rules to source code.
+- `test` - Runs the unit tests.
+- `test:watch` - Runs the unit tests in watch mode.
+- `e2e` - Runs the e2e tests.
+- `e2e:watch` - Runs the e2e tests in watch mode.
+- `build` - Builds the dist files
+
+For more details, read the [npm scripts](https://docs.npmjs.com/cli/v8/using-npm/scripts) documentation.
+
+## Linting and formatting code
+
+Linters are also excellent tools for finding certain classes of bugs, such as those related to variable scope.
+[ESLint](https://eslint.org/), [Prettier](https://prettier.io/) and [stylelint](https://stylelint.io/) help maintain the code quality.
+
+Run `npm run lint` to analyze your code.
 Many problems can be automatically fixed with `npm run lint:fix`.
-Depending on your editor, you may want to add an editor extension to lint and format your code while you type or on-save.
+
+Depending on your editor, you may want to add an editor extension to lint and format your code while you type or on-save
 
 ## Running unit tests
+
+Unit tests are responsible for testing of individual methods or classes by supplying input and making sure the output is as expected.
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 Run `npm run test:watch` to keep executing unit tests in real time while watching for file changes in the background.
@@ -59,6 +60,8 @@ The `x` means exclude and the `f` stands for focused.
 You can see the HTML coverage report opening the [index.html](dist/coverage/index.html) file in your web browser.
 
 ## Running end-to-end tests
+
+The end-to-end tests are responsible for testing scenarios on the product itself, by controlling the browser or the website, regardless of the internal structure to ensure expected behavior.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 In order to only run the protractor end-to-end tests, assuming the frontend is already running, run `npm run protractor`.
