@@ -41,7 +41,7 @@ For more details, read the [npm scripts](https://docs.npmjs.com/cli/v8/using-npm
 Linters are also excellent tools for finding certain classes of bugs, such as those related to variable scope.
 [ESLint](https://eslint.org/), [Prettier](https://prettier.io/) and [stylelint](https://stylelint.io/) help maintain the code quality.
 
-Run `npm run lint` to analyze your code.
+Use `npm run lint` to analyze your code.
 Many problems can be automatically fixed with `npm run lint:fix`.
 
 Depending on your editor, you may want to add an editor extension to lint and format your code while you type or on-save
@@ -50,8 +50,8 @@ Depending on your editor, you may want to add an editor extension to lint and fo
 
 Unit tests are responsible for testing of individual methods or classes by supplying input and making sure the output is as expected.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-Run `npm run test:watch` to keep executing unit tests in real time while watching for file changes in the background.
+Use `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Use `npm run test:watch` to keep executing unit tests in real time while watching for file changes in the background.
 
 If you want to exclude a specific test, simply use `xit()` or `xdescribe()`.
 If you want to run a specific test, use `fit()` or `fdescribe()`.
@@ -63,10 +63,14 @@ You can see the HTML coverage report opening the [index.html](dist/coverage/inde
 
 The end-to-end tests are responsible for testing scenarios on the product itself, by controlling the browser or the website, regardless of the internal structure to ensure expected behavior.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-In order to only run the protractor end-to-end tests, assuming the frontend is already running, run `npm run protractor`.
-Run `npm run protractor:watch` to keep executing your tests while watching for file changes in the background.
+Use `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+In order to only run the protractor end-to-end tests, assuming the frontend is already running, use `npm run protractor`.
+Use `npm run protractor:watch` to keep executing your tests while watching for file changes in the background.
 You can see the HTML report opening the [index.html](dist/e2e/index.html) file in your web browser.
+
+If you want to exclude a specific test, simply use `xit()` or `xdescribe()`.
+If you want to run a specific test, use `fit()` or `fdescribe()`.
+The `x` means exclude and the `f` stands for focused.
 
 ## Debugging
 
@@ -75,14 +79,14 @@ These functionalities are provided natively or based on plugins.
 [Angular DevTools](https://angular.io/guide/devtools/) is a Chrome extension that provides debugging and profiling capabilities for Angular applications.
 
 You can use our IDE for debugging unit and end-to-end tests.
-You can [debug](https://www.protractortest.org/#/debugging) async/await tests in chrome inspector with `debugger` keyword if we run `npm run protractor:debug`.
+You can [debug](https://www.protractortest.org/#/debugging) async/await tests in chrome inspector with `debugger` keyword if we use `npm run protractor:debug`.
 When you are using the debug scripts, you need to open the `chrome://inspect` page.
-The same is valid when you run `npm run test:debug` script.
+The same is valid when you use `npm run test:debug` script.
 These functionalities are provided natively or based on plugins.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/app/` directory.
+Use `npm run build` to build the project. The build artifacts will be stored in the `dist/app/` directory.
 
 ## Further help
 

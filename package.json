@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": false,
   "scripts": {
-    "ng": "ng",
     "start": "ng serve --open",
     "check": "npm run lint && npm run test",
     "test": "ng test --code-coverage",
@@ -17,7 +16,7 @@
     "lint:scss:fix": "stylelint \"src/**/*.scss\" --fix",
     "prettier": "prettier --check \"src/**/*.{scss,html}\" --loglevel warn",
     "prettier:fix": "prettier --write \"src/**/*.{scss,html}\" --loglevel warn",
-    "clean": "rimraf dist/",
+    "clean": "rimraf .angular/ dist/",
     "e2e": "rimraf dist/e2e && ng e2e",
     "e2e:watch": "rimraf dist/e2e && npm-run-all -p start protractor:watch",
     "protractor": "protractor e2e/protractor.conf.override.js",
